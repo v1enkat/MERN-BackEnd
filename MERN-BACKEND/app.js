@@ -14,6 +14,7 @@ const ownerRouter = require("./routes/ownerRouter");
 const expressSession = require("express-session");
 const flash = require("connect-flash");
 const indexRouter = require("./routes/index");
+const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
@@ -38,7 +39,7 @@ app.use("/owner",ownerRouter);
 app.use("/", indexRouter);
    
  
-app.listen(5000,function(err){
+app.listen(port,function(err){
     console.log("Running..........");
 }); 
   
